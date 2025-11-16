@@ -1,0 +1,13 @@
+../Core/Src/W25Q128.c:7:19:W25Q128_OCTO_SPI_Init	5
+../Core/Src/W25Q128.c:38:19:W25Q128_OSPI_ResetChip	3
+../Core/Src/W25Q128.c:105:19:W25Q128_OSPI_Configuration	7
+../Core/Src/W25Q128.c:147:19:W25Q128_OSPI_WriteEnable	4
+../Core/Src/W25Q128.c:227:19:W25Q128_OSPI_AutoPollingMemReady	3
+../Core/Src/W25Q128.c:277:19:W25Q128_OSPI_Erase_Chip	5
+../Core/Src/W25Q128.c:329:19:W25Q128_OSPI_EraseSector	5
+../Core/Src/W25Q128.c:383:19:W25Q128_OSPI_Write	10
+../Core/Src/W25Q128.c:474:19:W25Q128_OSPI_Read	3
+../Core/Src/W25Q128.c:519:19:W25Q128_OSPI_EnableMemoryMappedMode	4
+../Core/Src/W25Q128.c:596:19:W25Q128_IsBusy	2
+../Core/Src/W25Q128.c:611:19:W25Q128_Read_Status_Registers	6
+../Core/Src/W25Q128.c:663:19:W25Q128_Write_Status_Registers	12
