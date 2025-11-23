@@ -28,8 +28,7 @@ Core/Src/w25q128jvsq.o: ../Core/Src/w25q128jvsq.c \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart_ex.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h \
- ../Core/Inc/octospi.h ../Core/Inc/main.h ../Core/Inc/w25q128jvsq.h \
- ../Core/Inc/usart.h
+ ../Core/Inc/octospi.h ../Core/Inc/main.h ../Core/Inc/w25q128jvsq.h
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:
 ../Core/Inc/stm32u5xx_hal_conf.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_rcc.h:
@@ -62,4 +61,3 @@ Core/Src/w25q128jvsq.o: ../Core/Src/w25q128jvsq.c \
 ../Core/Inc/octospi.h:
 ../Core/Inc/main.h:
 ../Core/Inc/w25q128jvsq.h:
-../Core/Inc/usart.h:

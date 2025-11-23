@@ -85,7 +85,7 @@ Init(void) {
 
     __set_PRIMASK(1); //disable interrupts
 
-    USART_Println("Init OK");
+
     return LOADER_OK;
 }
 
@@ -222,7 +222,7 @@ Init(void) {
 int Write(uint32_t Address, uint32_t Size, uint8_t* buffer)
 {
     __enable_irq(); // enable interrupts if needed by HAL
-    USART_Println("Write start");
+
     // Full peripheral reset to ensure clean state
     __HAL_RCC_OSPI1_FORCE_RESET();
     __HAL_RCC_OSPI1_RELEASE_RESET();
