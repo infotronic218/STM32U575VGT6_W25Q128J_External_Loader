@@ -43,7 +43,7 @@ void MX_OCTOSPI1_Init(void)
   hospi1.Init.FifoThreshold = 1;
   hospi1.Init.DualQuad = HAL_OSPI_DUALQUAD_DISABLE;
   hospi1.Init.MemoryType = HAL_OSPI_MEMTYPE_MICRON;
-  hospi1.Init.DeviceSize = 22;
+  hospi1.Init.DeviceSize = 24;
   hospi1.Init.ChipSelectHighTime = 1;
   hospi1.Init.FreeRunningClock = HAL_OSPI_FREERUNCLK_DISABLE;
   hospi1.Init.ClockMode = HAL_OSPI_CLOCK_MODE_0;
@@ -109,7 +109,7 @@ void HAL_OSPI_MspInit(OSPI_HandleTypeDef* ospiHandle)
     */
     GPIO_InitStruct.Pin = GPIO_PIN_4;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF3_OCTOSPI1;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);

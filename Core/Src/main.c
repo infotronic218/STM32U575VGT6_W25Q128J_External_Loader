@@ -18,13 +18,21 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "icache.h"
 #include "octospi.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "W25Q128.h"
+#include "w25q128jvsq.h"
+HAL_StatusTypeDef ret ;
+extern OSPI_HandleTypeDef hospi1 ;
+
+uint8_t txbuf[]= "Hello world";
+uint8_t rxbuf[100];
+uint8_t rxbuf2[100];
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,11 +53,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t txbuf[] = "Test";
-uint8_t txbuf2[] = "A";
 
-HAL_StatusTypeDef ret=0;
-uint8_t rxbuf[100];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -93,34 +97,60 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_OCTOSPI1_Init();
+  MX_ICACHE_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  /*ret = W25Q128_OCTO_SPI_Init(&hospi1);
 
-	W25Q128_OCTO_SPI_Init(&hospi1);
-	USART_Print("Init started\n\r");
+  if(ret!=HAL_OK){
+	  while(1){};
+  }
 
-	ret=W25Q128_OSPI_Erase_Chip(&hospi1);
-	  ret=W25Q128_OSPI_EraseSector(&hospi1,0,0x7FFFFF);
-	  ret=W25Q128_OSPI_EraseSector(&hospi1,0x800000,0xFFFFFF);
-	  ret=W25Q128_OSPI_Read(&hospi1, rxbuf, 0, 100);
-	  ret=W25Q128_OSPI_Write(&hospi1,txbuf,0,sizeof(txbuf));
-	  ret=W25Q128_OSPI_Read(&hospi1, rxbuf, 0, 100);
-	  ///ret=W25Q128_OSPI_EnableMemoryMappedMode(&hospi1);
-	  HAL_Delay(1000);
+  // Erase the chip
 
-	if (W25Q128_OSPI_EnableMemoryMappedMode(&hospi1) != HAL_OK) {
-		while (1);
-	}
-	USART_Print("Mapped OK\n\r");
+  ret = W25Q128_OSPI_Erase_Chip(&hospi1);
+  if(ret!=HAL_OK){
+	  while(1){};
+  }
+
+  // Test the write and the read
+
+  ret = W25Q128_OSPI_Read(&hospi1, &rxbuf, 0, 100);
+
+  if(ret!=HAL_OK){
+	  while(1){}
+  }
+
+  ret = W25Q128_OSPI_Write(&hospi1, &txbuf, 0, sizeof(txbuf));
+  if(ret!=HAL_OK){
+	  while(1){}
+  }
+
+  ret = W25Q128_OSPI_Read(&hospi1, &rxbuf2, 0, 100);
+
+  if(ret!=HAL_OK){
+	  while(1){}
+  }
+
+
+  ret = W25Q128_OSPI_EnableMemoryMappedMode(&hospi1);
+
+  if(ret!=HAL_OK){
+	  while(1){}
+  }
+
+
+*/
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	while (1) {
+  while (1)
+  {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	}
+  }
   /* USER CODE END 3 */
 }
 
@@ -150,10 +180,10 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_MSI;
   RCC_OscInitStruct.PLL.PLLMBOOST = RCC_PLLMBOOST_DIV4;
   RCC_OscInitStruct.PLL.PLLM = 3;
-  RCC_OscInitStruct.PLL.PLLN = 10;
+  RCC_OscInitStruct.PLL.PLLN = 15;
   RCC_OscInitStruct.PLL.PLLP = 2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
-  RCC_OscInitStruct.PLL.PLLR = 1;
+  RCC_OscInitStruct.PLL.PLLR = 2;
   RCC_OscInitStruct.PLL.PLLRGE = RCC_PLLVCIRANGE_1;
   RCC_OscInitStruct.PLL.PLLFRACN = 0;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -172,7 +202,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB3CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
     Error_Handler();
   }

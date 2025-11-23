@@ -1,6 +1,12 @@
+/*
+ * Dev_Inf.h
+ *
+ *  Created on: Nov 18, 2025
+ *      Author: levi
+ */
 
-#ifndef DEV_INF_H_
-#define DEV_INF_H_
+#ifndef INC_DEV_INF_H_
+#define INC_DEV_INF_H_
 
 #define     MCU_FLASH   1
 #define     NAND_FLASH  2
@@ -31,5 +37,4 @@ struct StorageInfo {
 };
 
 
-
-#endif /* DEV_INF_H_ */
+#endif /* INC_DEV_INF_H_ */

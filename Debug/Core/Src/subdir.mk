@@ -7,8 +7,8 @@
 C_SRCS += \
 ../Core/Src/Dev_Inf.c \
 ../Core/Src/Loader_Src.c \
-../Core/Src/W25Q128.c \
 ../Core/Src/gpio.c \
+../Core/Src/icache.c \
 ../Core/Src/main.c \
 ../Core/Src/octospi.c \
 ../Core/Src/stm32u5xx_hal_msp.c \
@@ -16,13 +16,14 @@ C_SRCS += \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32u5xx.c \
-../Core/Src/usart.c 
+../Core/Src/usart.c \
+../Core/Src/w25q128jvsq.c 
 
 OBJS += \
 ./Core/Src/Dev_Inf.o \
 ./Core/Src/Loader_Src.o \
-./Core/Src/W25Q128.o \
 ./Core/Src/gpio.o \
+./Core/Src/icache.o \
 ./Core/Src/main.o \
 ./Core/Src/octospi.o \
 ./Core/Src/stm32u5xx_hal_msp.o \
@@ -30,13 +31,14 @@ OBJS += \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32u5xx.o \
-./Core/Src/usart.o 
+./Core/Src/usart.o \
+./Core/Src/w25q128jvsq.o 
 
 C_DEPS += \
 ./Core/Src/Dev_Inf.d \
 ./Core/Src/Loader_Src.d \
-./Core/Src/W25Q128.d \
 ./Core/Src/gpio.d \
+./Core/Src/icache.d \
 ./Core/Src/main.d \
 ./Core/Src/octospi.d \
 ./Core/Src/stm32u5xx_hal_msp.d \
@@ -44,7 +46,8 @@ C_DEPS += \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32u5xx.d \
-./Core/Src/usart.d 
+./Core/Src/usart.d \
+./Core/Src/w25q128jvsq.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -54,7 +57,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/Dev_Inf.cyclo ./Core/Src/Dev_Inf.d ./Core/Src/Dev_Inf.o ./Core/Src/Dev_Inf.su ./Core/Src/Loader_Src.cyclo ./Core/Src/Loader_Src.d ./Core/Src/Loader_Src.o ./Core/Src/Loader_Src.su ./Core/Src/W25Q128.cyclo ./Core/Src/W25Q128.d ./Core/Src/W25Q128.o ./Core/Src/W25Q128.su ./Core/Src/gpio.cyclo ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/gpio.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/octospi.cyclo ./Core/Src/octospi.d ./Core/Src/octospi.o ./Core/Src/octospi.su ./Core/Src/stm32u5xx_hal_msp.cyclo ./Core/Src/stm32u5xx_hal_msp.d ./Core/Src/stm32u5xx_hal_msp.o ./Core/Src/stm32u5xx_hal_msp.su ./Core/Src/stm32u5xx_it.cyclo ./Core/Src/stm32u5xx_it.d ./Core/Src/stm32u5xx_it.o ./Core/Src/stm32u5xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32u5xx.cyclo ./Core/Src/system_stm32u5xx.d ./Core/Src/system_stm32u5xx.o ./Core/Src/system_stm32u5xx.su ./Core/Src/usart.cyclo ./Core/Src/usart.d ./Core/Src/usart.o ./Core/Src/usart.su
+	-$(RM) ./Core/Src/Dev_Inf.cyclo ./Core/Src/Dev_Inf.d ./Core/Src/Dev_Inf.o ./Core/Src/Dev_Inf.su ./Core/Src/Loader_Src.cyclo ./Core/Src/Loader_Src.d ./Core/Src/Loader_Src.o ./Core/Src/Loader_Src.su ./Core/Src/gpio.cyclo ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/gpio.su ./Core/Src/icache.cyclo ./Core/Src/icache.d ./Core/Src/icache.o ./Core/Src/icache.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/octospi.cyclo ./Core/Src/octospi.d ./Core/Src/octospi.o ./Core/Src/octospi.su ./Core/Src/stm32u5xx_hal_msp.cyclo ./Core/Src/stm32u5xx_hal_msp.d ./Core/Src/stm32u5xx_hal_msp.o ./Core/Src/stm32u5xx_hal_msp.su ./Core/Src/stm32u5xx_it.cyclo ./Core/Src/stm32u5xx_it.d ./Core/Src/stm32u5xx_it.o ./Core/Src/stm32u5xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32u5xx.cyclo ./Core/Src/system_stm32u5xx.d ./Core/Src/system_stm32u5xx.o ./Core/Src/system_stm32u5xx.su ./Core/Src/usart.cyclo ./Core/Src/usart.d ./Core/Src/usart.o ./Core/Src/usart.su ./Core/Src/w25q128jvsq.cyclo ./Core/Src/w25q128jvsq.d ./Core/Src/w25q128jvsq.o ./Core/Src/w25q128jvsq.su
 
 .PHONY: clean-Core-2f-Src
 

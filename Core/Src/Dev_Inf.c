@@ -4,7 +4,7 @@
  */
 #include "Dev_Inf.h"
 #include "octospi.h"
-#include "W25Q128.h"
+#include "w25q128jvsq.h"
 /* This structure contains information used by ST-LINK Utility to program and erase the device */
 #if defined (__ICCARM__)
 __root struct StorageInfo const StorageInfo  =  {

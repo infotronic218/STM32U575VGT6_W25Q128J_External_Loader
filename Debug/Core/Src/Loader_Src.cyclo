@@ -1,6 +1,6 @@
-../Core/Src/Loader_Src.c:19:1:Init	3
-../Core/Src/Loader_Src.c:81:1:Write	3
-../Core/Src/Loader_Src.c:108:1:SectorErase	3
-../Core/Src/Loader_Src.c:138:1:MassErase	3
-../Core/Src/Loader_Src.c:169:1:CheckSum	14
-../Core/Src/Loader_Src.c:243:1:Verify	4
+../Core/Src/Loader_Src.c:28:1:Init	3
+../Core/Src/Loader_Src.c:222:5:Write	4
+../Core/Src/Loader_Src.c:263:5:SectorErase	4
+../Core/Src/Loader_Src.c:307:5:MassErase	3
+../Core/Src/Loader_Src.c:338:10:CheckSum	14
+../Core/Src/Loader_Src.c:420:10:Verify	5

@@ -1,0 +1,14 @@
+../Core/Src/w25q128jvsq.c:18:13:ospi_command_default_init	16	static
+../Core/Src/w25q128jvsq.c:38:19:W25Q128_OCTO_SPI_Init	16	static
+../Core/Src/w25q128jvsq.c:65:19:W25Q128_OSPI_ResetChip	96	static
+../Core/Src/w25q128jvsq.c:106:19:W25Q128_OSPI_Configuration	24	static
+../Core/Src/w25q128jvsq.c:159:19:W25Q128_OSPI_WriteEnable	120	static
+../Core/Src/w25q128jvsq.c:213:19:W25Q128_OSPI_AutoPollingMemReady	120	static
+../Core/Src/w25q128jvsq.c:250:19:W25Q128_OSPI_Erase_Chip	96	static
+../Core/Src/w25q128jvsq.c:289:19:W25Q128_OSPI_EraseSector	112	static
+../Core/Src/w25q128jvsq.c:331:19:W25Q128_OSPI_Write	120	static
+../Core/Src/w25q128jvsq.c:409:19:W25Q128_OSPI_Read	104	static
+../Core/Src/w25q128jvsq.c:441:19:W25Q128_OSPI_EnableMemoryMappedMode	104	static
+../Core/Src/w25q128jvsq.c:518:19:W25Q128_IsBusy	24	static
+../Core/Src/w25q128jvsq.c:533:19:W25Q128_Read_Status_Registers	104	static
+../Core/Src/w25q128jvsq.c:572:19:W25Q128_Write_Status_Registers	96	static

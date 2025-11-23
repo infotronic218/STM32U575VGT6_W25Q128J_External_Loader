@@ -15,6 +15,7 @@ Core/Src/Loader_Src.o: ../Core/Src/Loader_Src.c ../Core/Inc/octospi.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_rcc_ex.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_gpio.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_gpio_ex.h \
+ ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_icache.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_dma.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_dma_ex.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_cortex.h \
@@ -27,7 +28,7 @@ Core/Src/Loader_Src.o: ../Core/Src/Loader_Src.c ../Core/Inc/octospi.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart_ex.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h \
- ../Core/Inc/main.h ../Core/Inc/gpio.h ../Core/Inc/W25Q128.h \
+ ../Core/Inc/main.h ../Core/Inc/w25q128jvsq.h ../Core/Inc/gpio.h \
  ../Core/Inc/usart.h
 ../Core/Inc/octospi.h:
 ../Core/Inc/main.h:
@@ -47,6 +48,7 @@ Core/Src/Loader_Src.o: ../Core/Src/Loader_Src.c ../Core/Inc/octospi.h \
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_rcc_ex.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_gpio.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_gpio_ex.h:
+../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_icache.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_dma.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_dma_ex.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_cortex.h:
@@ -60,6 +62,6 @@ Core/Src/Loader_Src.o: ../Core/Src/Loader_Src.c ../Core/Inc/octospi.h \
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart_ex.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h:
 ../Core/Inc/main.h:
+../Core/Inc/w25q128jvsq.h:
 ../Core/Inc/gpio.h:
-../Core/Inc/W25Q128.h:
 ../Core/Inc/usart.h:

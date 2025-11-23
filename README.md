@@ -1,1 +1,0 @@
-# STM32U575VGT6_W25Q128J_External_Loader

@@ -34,23 +34,23 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := U575VGT6_External_Loader
+BUILD_ARTIFACT_NAME := STM32U575VGT6_W25Q128J_ExternalLoader
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-U575VGT6_External_Loader.elf \
+STM32U575VGT6_W25Q128J_ExternalLoader.elf \
 
 MAP_FILES += \
-U575VGT6_External_Loader.map \
+STM32U575VGT6_W25Q128J_ExternalLoader.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-U575VGT6_External_Loader.list \
+STM32U575VGT6_W25Q128J_ExternalLoader.list \
 
 
 # All Target
@@ -58,11 +58,11 @@ all:
 	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
 
 # Main-build Target
-main-build: U575VGT6_External_Loader.elf secondary-outputs
+main-build: STM32U575VGT6_W25Q128J_ExternalLoader.elf secondary-outputs
 
 # Tool invocations
-U575VGT6_External_Loader.elf U575VGT6_External_Loader.map: $(OBJS) $(USER_OBJS) /home/levi/STM32CubeIDE/workspace_1.19.0/U575VGT6_External_Loader/linker.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "U575VGT6_External_Loader.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"/home/levi/STM32CubeIDE/workspace_1.19.0/U575VGT6_External_Loader/linker.ld" --specs=nosys.specs -Wl,-Map="U575VGT6_External_Loader.map" -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32U575VGT6_W25Q128J_ExternalLoader.elf STM32U575VGT6_W25Q128J_ExternalLoader.map: $(OBJS) $(USER_OBJS) /home/levi/STM32CubeIDE/workspace_1.19.0/STM32U575VGT6_W25Q128J_ExternalLoader/linker.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32U575VGT6_W25Q128J_ExternalLoader.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"/home/levi/STM32CubeIDE/workspace_1.19.0/STM32U575VGT6_W25Q128J_ExternalLoader/linker.ld" --specs=nosys.specs -Wl,-Map="STM32U575VGT6_W25Q128J_ExternalLoader.map" -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -71,19 +71,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-U575VGT6_External_Loader.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "U575VGT6_External_Loader.list"
+STM32U575VGT6_W25Q128J_ExternalLoader.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "STM32U575VGT6_W25Q128J_ExternalLoader.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) U575VGT6_External_Loader.elf U575VGT6_External_Loader.list U575VGT6_External_Loader.map default.size.stdout
+	-$(RM) STM32U575VGT6_W25Q128J_ExternalLoader.elf STM32U575VGT6_W25Q128J_ExternalLoader.list STM32U575VGT6_W25Q128J_ExternalLoader.map default.size.stdout
 	-@echo ' '
 
 post-build:
-	cp "U575VGT6_External_Loader.elf" "../U575VGT6_External_Loader.stldr"
-	cp  "U575VGT6_External_Loader.elf" "/home/levi/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/W25Q128JVE_STM32U575VGT6.stldr"
+	cp "STM32U575VGT6_W25Q128J_ExternalLoader.elf" "../STM32U575VGT6_W25Q128J_ExternalLoader.stldr"
+	cp  "STM32U575VGT6_W25Q128J_ExternalLoader.elf" "/home/levi/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/W25Q128JVE_STM32U575VGT6.stldr"
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
